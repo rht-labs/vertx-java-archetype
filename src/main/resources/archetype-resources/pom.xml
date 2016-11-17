@@ -6,27 +6,20 @@
   <artifactId>${artifactId}</artifactId>
   <version>${version}</version>
 
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>io.vertx</groupId>
-        <artifactId>vertx-dependencies</artifactId>
-        <version>3.0.0</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-    
+  <properties>
+    <vertx.version>3.3.3</vertx.version>
+  </properties>    
 
   <dependencies>
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-core</artifactId>
+        <version>${vertx.version}</version>
     </dependency>
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-web</artifactId>
+        <version>${vertx.version}</version>
     </dependency>
     <!-- Uncomment if you want to enable clustering with Hazelcast
     <dependency>
@@ -37,13 +30,13 @@
     <!-- Uncomment if you want to use the async database service
     <dependency>
         <groupId>io.vertx</groupId>
-        <artifactId>vertx-mysql-postgresql-service</artifactId>
+        <artifactId>vertx-mysql-postgresql-client</artifactId>
         <version>${vertx.version}</version>
     </dependency>-->
     <!-- Uncomment if you want to enable async mail sending service
     <dependency>
         <groupId>io.vertx</groupId>
-        <artifactId>vertx-mail-service</artifactId>
+        <artifactId>vertx-mail-client</artifactId>
         <version>${vertx.version}</version>
     </dependency>-->
     <!-- Uncomment if you want to enable reactive streams
@@ -55,7 +48,7 @@
     <!-- Uncomment if you want to enable mongo DB service
     <dependency>
         <groupId>io.vertx</groupId>
-        <artifactId>vertx-mongo-service</artifactId>
+        <artifactId>vertx-mongo-client</artifactId>
         <version>${vertx.version}</version>
     </dependency>-->
     <!-- Uncomment if you want to enable metrics
@@ -67,19 +60,7 @@
     <!-- Uncomment if you want to enable the JDBC database service
     <dependency>
         <groupId>io.vertx</groupId>
-        <artifactId>vertx-jdbc-service</artifactId>
-        <version>${vertx.version}</version>
-    </dependency>-->
-    <!-- Uncomment if you want to enable the auth service
-    <dependency>
-        <groupId>io.vertx</groupId>
-        <artifactId>vertx-auth-service</artifactId>
-        <version>${vertx.version}</version>
-    </dependency>-->
-    <!-- Uncomment if you want to use the RxJava API for Vert.x
-    <dependency>
-        <groupId>io.vertx</groupId>
-        <artifactId>vertx-rx-java</artifactId>
+        <artifactId>vertx-jdbc-client</artifactId>
         <version>${vertx.version}</version>
     </dependency>-->
   </dependencies>
@@ -109,7 +90,7 @@
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                   <manifestEntries>
-                    <Main-Class>io.vertx.core.Starter</Main-Class>
+                    <Main-Class>io.vertx.core.Launcher</Main-Class>
                     <Main-Verticle>${package}.Main</Main-Verticle>
                   </manifestEntries>
                 </transformer>
