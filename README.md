@@ -24,7 +24,13 @@ Using
 -----
 
 ```bash
-mvn archetype:generate -DarchetypeGroupId=com.redhat.labs.vertx -DarchetypeArtifactId=vertx-java-archetype
+git clone https://github.com/rht-labs/vertx-java-archetype.git
+cd vertx-java-archetype
+mvn clean install
+cd /path/to/workspace
+mvn archetype:generate -DarchetypeGroupId=com.redhat.labs.vertx -DarchetypeArtifactId=vertx-java-archetype -DarchetypeVersion=3.4.1
+cd ${PROJECT_NAME}
+mvn compile package vertx:package
 ```
 
 Maven will interactively prompt you to build the template application. A small Java
