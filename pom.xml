@@ -4,7 +4,7 @@
 
   <groupId>com.redhat.labs.vertx</groupId>
   <artifactId>vertx-java-archetype</artifactId>
-  <version>3.4.1</version>
+  <version>3.4.1-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
   <name>vertx-java-archetype</name>
@@ -143,7 +143,7 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
+<!--      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-gpg-plugin</artifactId>
         <version>1.5</version>
@@ -156,7 +156,7 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
+      </plugin>-->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>license-maven-plugin</artifactId>
