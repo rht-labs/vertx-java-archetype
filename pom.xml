@@ -2,14 +2,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.zanclus.codepalousa</groupId>
+  <groupId>com.redhat.labs.vertx</groupId>
   <artifactId>vertx-java-archetype</artifactId>
-  <version>3.3.3</version>
+  <version>3.4.1</version>
   <packaging>maven-archetype</packaging>
 
   <name>vertx-java-archetype</name>
   <description>A Maven Archetype for generating a basic Vert.x 3.0.0 Java project</description>
   <url>https://github.com/JUGGL/vertx-java-archetype</url>
+  <organization>
+    <name>Red Hat Open Innovation Labs</name>
+    <url>https://www.redhat.com/en/open-innovation-labs</url>
+  </organization>
+  <inceptionYear>2017</inceptionYear>
   <developers>
     <developer>
       <name>Deven Phillips</name>
@@ -17,8 +22,8 @@
     </developer>
   </developers>
   <scm>
-    <url>https://github.com/JUGGL/vertx-java-archetype</url>
-    <developerConnection>scm:git:ssh://github.com/JUGGL/vertx-java-archetype.git</developerConnection>
+    <url>https://github.com/rht-labs/vertx-java-archetype</url>
+    <developerConnection>scm:git:ssh://github.com/rht-labs/vertx-java-archetype.git</developerConnection>
   </scm>
   <licenses>
     <license>
@@ -37,6 +42,10 @@
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
   </distributionManagement>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 
   <build>
     <extensions>
@@ -147,6 +156,14 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <version>1.12</version>
+        <configuration>
+          <licenseName>apache_v2</licenseName>
+        </configuration>
       </plugin>
     </plugins>
   </build>
