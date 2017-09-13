@@ -1,3 +1,5 @@
-/nb-configuration.xml
-/target
-/target/**
+target
+target/**
+.idea
+.idea/**
+**/*.iml

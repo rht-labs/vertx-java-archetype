@@ -4,6 +4,7 @@
 package ${package};
 
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.Future;
 
 /**
  *
@@ -11,9 +12,10 @@ import io.vertx.core.AbstractVerticle;
 public class Main extends AbstractVerticle {
 
   @Override
-  public void start() throws Exception {
+  public void start(Future startFuture) throws Exception {
     vertx.setPeriodic(3000, res -> {
       System.out.println("Periodic event triggered.");
     });
+    startFuture.complete();
   }
 }
